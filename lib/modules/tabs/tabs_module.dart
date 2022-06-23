@@ -1,10 +1,12 @@
 import 'package:flutter_modular/flutter_modular.dart';
 
-import 'discover_page.dart';
-import 'home_page.dart';
-import 'inbox_page.dart';
-import 'profile_page.dart';
-import 'tabs_page.dart';
+import 'pages/discover_page.dart';
+import 'pages/home_page.dart';
+import 'pages/inbox_page.dart';
+import 'pages/profile_page.dart';
+import 'pages/tabs_page.dart';
+
+
 
 class TabsModule extends Module {
 

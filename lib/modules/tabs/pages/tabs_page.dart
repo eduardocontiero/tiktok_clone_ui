@@ -17,23 +17,15 @@ class _TabsPageState extends State<TabsPage> {
     });
   }
 
+
+  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: BottomNavigationBar(
           onTap: (page) {
-            _changePage(page);
-            if (page == 0) {
-              Modular.to.navigate('/tabs/home');
-            } else if (page == 1) {
-              Modular.to.navigate('/tabs/discover');
-            } else if (page == 2) {
-              Modular.to.navigate('/tabs/video');
-            } else if (page == 3) {
-              Modular.to.navigate('/tabs/inbox');
-            } else if (page == 4) {
-              Modular.to.navigate('/tabs/profile');
-            }
+           
           },
           type: BottomNavigationBarType.fixed,
           backgroundColor: Theme.of(context).primaryColor,
