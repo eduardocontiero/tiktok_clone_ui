@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 
+import 'package:google_fonts/google_fonts.dart';
+
 class AppConfigUI {
   AppConfigUI._();
 
   static const MaterialColor _primarySwatch = MaterialColor(
-    0XFF0066B0, {
+    0XFF0000, {
       50: Colors.black,
       100: Colors.black,
       200: Colors.black,
@@ -20,7 +22,8 @@ class AppConfigUI {
 
   static final ThemeData theme = ThemeData(
     primarySwatch: _primarySwatch,
-    primaryColor: Colors.black
+    primaryColor: Colors.black,
+    textTheme: GoogleFonts.varelaRoundTextTheme()
   );
 
 
