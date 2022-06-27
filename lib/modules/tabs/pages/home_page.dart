@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 
 import 'package:tik_tok_clone_ui/core/utils/screen_size.dart';
 
+import '../../../core/mocks/mock.dart';
 import '../widgets/sidebar.dart';
-import '../widgets/video_running.dart';
+import '../widgets/video_detail.dart';
+import '../widgets/video_tile.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -14,6 +16,8 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   bool _isFollowingSelected = true;
+  int _pageIndex = 0;
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -54,16 +58,20 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
         body: PageView.builder(
-            onPageChanged: (int page) => {print('page changed')},
+            onPageChanged: (int page) {
+              setState(() {
+                _pageIndex = page;
+              });
+            },
             scrollDirection: Axis.vertical,
-            itemCount: 10,
+            itemCount: videos.length,
             itemBuilder: (context, index) {
               return Stack(
                 alignment: Alignment.bottomCenter,
                 children: [
-                  Container(
-                    color: Colors.purple,
-                  ),
+                  SizedBox.expand(child: FittedBox(
+                    fit: BoxFit.cover,
+                    child: VideoTile(video: videos[index], currentIndex: index, pageIndex: _pageIndex,))),
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
@@ -71,14 +79,15 @@ class _HomePageState extends State<HomePage> {
                         flex: 3,
                         child: Container(
                           height: screenHeight(context, dividedBy: 4),
-                          child: VideoRunning(),
+                          child: VideoRunning(video: videos[index]),
                         ),
                       ),
                       Expanded(
                         child: Container(
                           height: screenHeight(context, dividedBy: 1.75),
-                          color: Colors.pink,
-                          child: Sidebar(),
+                          child: Sidebar(
+                            video: videos[index],
+                          ),
                         ),
                       ),
                     ],

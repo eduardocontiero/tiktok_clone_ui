@@ -15,9 +15,9 @@ class TabsModule extends Module {
 
   @override
   List<ModularRoute> get routes => [
-    ChildRoute('/', child: (context, args) => TabsPage(), children: [
+    ChildRoute(Modular.initialRoute, child: (context, args) => TabsPage(), children: [
       ChildRoute('/home', child: (context, args) => HomePage()),
-      ChildRoute('/discovers', child: (context, args) => DiscoverPage()),
+      ChildRoute('/discover', child: (context, args) => DiscoverPage()),
       ChildRoute('/inbox', child: (context, args) => InboxPage()),
       ChildRoute('/profile', child: (context, args) => ProfilePage()),
     ])

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'package:flutter_modular/flutter_modular.dart';
 
 import '../widgets/custom_bottom_navigation_bar.dart';
@@ -17,48 +18,28 @@ class _TabsPageState extends State<TabsPage> {
     setState(() {
       _pageIndex = page;
     });
+
+    if (page == 0) {
+      Modular.to.navigate('/tabs/home');
+    } else if (page == 1) {
+      Modular.to.navigate('/tabs/discover');
+    } else if (page == 2) {
+      Modular.to.navigate('/tabs/inbox');
+    } else if (page == 3) {
+      Modular.to.navigate('/tabs/profile');
+    }
+  }
+
+  @override
+  void initState() {
+    Modular.to.navigate('/tabs/home');
+    super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: 
-      CustomBottomNavigationBar(
-        selectedPageIndex: _pageIndex, onIconTap: _changePage
-      )
-      
-      /*BottomNavigationBar(
-          onTap: (page) {
-            _changePage(page);
-            if (page == 0) {
-              Modular.to.navigate('/tabs/home');
-            } else if (page == 1) {
-              Modular.to.navigate('/tabs/discover');
-            } else if (page == 2) {
-              Modular.to.navigate('/tabs/video');
-            } else if (page == 3) {
-              Modular.to.navigate('/tabs/inbox');
-            } else if (page == 4) {
-              Modular.to.navigate('/tabs/profile');
-            }
-          },
-          type: BottomNavigationBarType.fixed,
-          backgroundColor: Theme.of(context).primaryColor,
-          selectedItemColor: Colors.red,
-          unselectedItemColor: Colors.white,
-          currentIndex: _pageIndex,
-          items: const [
-            BottomNavigationBarItem(
-                icon: Icon(Icons.home, size: 30), label: 'Home'),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.search, size: 30), label: 'Search'),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.search, size: 30), label: ''),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.home, size: 30), label: 'Message'),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.person, size: 30), label: 'Profile'),
-          ]),*/,
+      bottomNavigationBar: CustomBottomNavigationBar(selectedPageIndex: _pageIndex, onIconTap: _changePage),
       body: RouterOutlet(),
     );
   }

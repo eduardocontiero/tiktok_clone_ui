@@ -43,15 +43,6 @@ class CustomBottomNavigationBar extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         onIconTap(index);
-        if (index == 0) {
-          Modular.to.navigate('/tabs/home');
-        } else if (index == 1) {
-          Modular.to.navigate('/tabs/discover');
-        } else if (index == 2) {
-          Modular.to.navigate('/tabs/inbox');
-        } else if (index == 3) {
-          Modular.to.navigate('/tabs/profile');
-        }
       },
       child: Column(
         mainAxisSize: MainAxisSize.min,

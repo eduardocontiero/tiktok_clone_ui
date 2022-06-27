@@ -7,6 +7,7 @@ class Video {
   final String audioName;
   final String likes;
   final String comments;
+  final String shares;
 
   
   Video({
@@ -16,6 +17,7 @@ class Video {
     required this.audioName,
     required this.likes,
     required this.comments,
+    required this.shares
   });
 
   
