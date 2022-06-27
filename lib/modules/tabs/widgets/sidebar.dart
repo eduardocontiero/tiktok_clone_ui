@@ -96,7 +96,7 @@ class _SidebarState extends State<Sidebar> with SingleTickerProviderStateMixin {
             decoration: BoxDecoration(
                 border: Border.all(color: Colors.white),
                 borderRadius: BorderRadius.circular(25),
-                image: DecorationImage(image: NetworkImage(imageUrl), fit: BoxFit.cover)),
+                image: DecorationImage(image: AssetImage(imageUrl), fit: BoxFit.cover)),
           ),
           Positioned(
             bottom: -10,
