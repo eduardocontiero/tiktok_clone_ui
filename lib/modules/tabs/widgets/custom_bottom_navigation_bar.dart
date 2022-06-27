@@ -22,10 +22,10 @@ class CustomBottomNavigationBar extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             _bottomBarNavItem(context, index: 0, label: 'Home', textStyle: style, icon: Icons.home),
-            _bottomBarNavItem(context, index: 1, label: 'Discover', textStyle: style, icon: Icons.search),
+            _bottomBarNavItem(context, index: 1, label: 'Friends', textStyle: style, icon: MaterialCommunityIcons.account_multiple),
             _addVideoNavItem(barHeight),
             _bottomBarNavItem(context, index: 2, label: 'Inbox', textStyle: style, icon: Feather.inbox),
-            _bottomBarNavItem(context, index: 3, label: 'Home', textStyle: style, icon: Icons.person_outline),
+            _bottomBarNavItem(context, index: 3, label: 'Profile', textStyle: style, icon: Icons.person_outline),
           ],
         ),
       ),
