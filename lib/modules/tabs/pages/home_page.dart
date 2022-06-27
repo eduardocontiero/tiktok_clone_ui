@@ -28,7 +28,7 @@ class _HomePageState extends State<HomePage> {
         appBar: AppBar(
             elevation: 0,
             backgroundColor: Colors.black,
-            leading: Image.asset('assets/live_icon.png'),
+            leading: Center(child: Image.asset('assets/live_icon.png', width: 40,)),
             actions: [
               IconButton(
                 onPressed: (){},
