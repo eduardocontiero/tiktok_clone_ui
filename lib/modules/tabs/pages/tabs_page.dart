@@ -22,7 +22,7 @@ class _TabsPageState extends State<TabsPage> {
     if (page == 0) {
       Modular.to.navigate('/tabs/home');
     } else if (page == 1) {
-      Modular.to.navigate('/tabs/discover');
+      Modular.to.navigate('/tabs/friends');
     } else if (page == 2) {
       Modular.to.navigate('/tabs/inbox');
     } else if (page == 3) {

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_icons/flutter_icons.dart';
-import 'package:flutter_modular/flutter_modular.dart';
 import 'package:tik_tok_clone_ui/core/utils/screen_size.dart';
 
 class CustomBottomNavigationBar extends StatelessWidget {
@@ -14,7 +13,7 @@ class CustomBottomNavigationBar extends StatelessWidget {
     final barHeight = screenHeight(context )* 0.06;
     final style = Theme.of(context).textTheme.bodyText1!.copyWith(fontSize: 11, fontWeight: FontWeight.bold);
     return BottomAppBar(
-      color: selectedPageIndex == 0 ? Colors.black : Colors.white,
+      color: Colors.black,
       child: SizedBox(
         height: barHeight,
         child: Row(
@@ -34,7 +33,7 @@ class CustomBottomNavigationBar extends StatelessWidget {
 
   _bottomBarNavItem(BuildContext context, {required int index, required String label, required TextStyle textStyle, required IconData icon}) {
     bool isSelected = selectedPageIndex == index;
-    Color iconAndTextColor = isSelected ? Theme.of(context).primaryColor : Colors.grey;
+    Color iconAndTextColor = isSelected ? Colors.white : Colors.grey;
 
     if (isSelected && selectedPageIndex == 0) {
       iconAndTextColor = Colors.white;
@@ -74,10 +73,10 @@ class CustomBottomNavigationBar extends StatelessWidget {
           child: Container(
             width: 41,
             height: height - 15,
-            decoration: BoxDecoration(color: selectedPageIndex == 0 ? Colors.white : Colors.black, borderRadius: BorderRadius.circular(8)),
+            decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(8)),
             child: Icon(
               Icons.add,
-              color: selectedPageIndex == 0 ? Colors.black : Colors.white,
+              color: Colors.black,
             ),
           ),
         ),

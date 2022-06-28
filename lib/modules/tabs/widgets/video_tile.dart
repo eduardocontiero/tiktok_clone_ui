@@ -74,8 +74,7 @@ class _VideoTileState extends State<VideoTile> {
                   ));
             }
 
-            return Container(
-              alignment: Alignment.center,
+            return Center(
               child: Lottie.asset('assets/tiktok_loader.json'),
             );
           }),
