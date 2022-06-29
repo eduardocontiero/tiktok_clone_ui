@@ -5,7 +5,9 @@ import 'package:expandable_text/expandable_text.dart';
 import 'package:marquee/marquee.dart';
 import 'package:tik_tok_clone_ui/core/utils/screen_size.dart';
 
-import '../models/video_model.dart';
+import '../../models/video_model.dart';
+
+
 
 class VideoRunning extends StatelessWidget {
   final Video video;

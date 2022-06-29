@@ -1,4 +1,5 @@
 import '../../modules/tabs/models/activity_model.dart';
+import '../../modules/tabs/models/message_model.dart';
 import '../../modules/tabs/models/user_model.dart';
 import '../../modules/tabs/models/video_model.dart';
 
@@ -36,5 +37,13 @@ final List<Activity> activities = [
   Activity(user: friends[0], activityThumb: 'https://images.unsplash.com/photo-1656329824500-5a47495c0fa5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80'),
   Activity(user: friends[1], activityThumb: 'https://images.unsplash.com/photo-1656329824500-5a47495c0fa5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80'),
 ];
+
+final List<Message> messages = [
+  Message(user: friends[0], message: 'Hoje vai ter churras em casa mais tarde, aparece lá', messagesCount: '2/15'),
+  Message(user: friends[1], message: 'E ai cara, bora tomar uma hoje?', messagesCount: '3/10'),
+];
+
+
+
 
 

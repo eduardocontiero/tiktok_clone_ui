@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:video_player/video_player.dart';
 
-import '../models/video_model.dart';
+import '../../models/video_model.dart';
+
 
 class VideoTile extends StatefulWidget {
   final Video video;

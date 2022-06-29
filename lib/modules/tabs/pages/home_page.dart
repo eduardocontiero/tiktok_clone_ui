@@ -4,9 +4,10 @@ import 'package:flutter_icons/flutter_icons.dart';
 import 'package:tik_tok_clone_ui/core/utils/screen_size.dart';
 
 import '../../../core/mocks/mock.dart';
+import '../widgets/home/video_detail.dart';
+import '../widgets/home/video_tile.dart';
 import '../widgets/sidebar.dart';
-import '../widgets/video_detail.dart';
-import '../widgets/video_tile.dart';
+
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
