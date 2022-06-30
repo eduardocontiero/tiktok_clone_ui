@@ -26,6 +26,15 @@ final List<Video> videos = [
   Video(videoUrl: 'assets/videos/video3.mp4', postedBy: demoUser3, caption: 'caption', audioName: 'audioName', likes: '12.5k', comments: '123', shares: '300'),
 ];
 
+final List<String> videoThumbs = [
+  'https://images.unsplash.com/photo-1656505276809-5cf15d7a6c67?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80',
+  'https://images.unsplash.com/photo-1656376406253-3794cdc050b1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
+  'https://images.unsplash.com/photo-1656576897714-80eb41ad7609?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
+  'https://images.unsplash.com/photo-1656591674454-c5a06ccf4fff?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
+  'https://images.unsplash.com/photo-1656512175847-80b5573ebd4a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
+  'https://images.unsplash.com/photo-1656439726649-cfc125817860?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=627&q=80'
+];
+
 final List<User> friends = [
   User(profileImageUrl: 'https://images.pexels.com/photos/39866/entrepreneur-startup-start-up-man-39866.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500', username: 'fulano6842'),
   User(profileImageUrl: 'https://www.pngkit.com/png/detail/5-53915_free-png-happy-black-person-png-images-transparent.png', username: 'joao123teste'),
