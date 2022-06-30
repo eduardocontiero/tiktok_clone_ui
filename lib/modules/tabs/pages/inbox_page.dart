@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_icons/flutter_icons.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:tik_tok_clone_ui/core/utils/screen_size.dart';
 
 import '../../../core/mocks/mock.dart';
+import '../widgets/inbox/friend_item.dart';
+import '../widgets/inbox/message_item.dart';
+import '../widgets/inbox/notification_item.dart';
 
 class InboxPage extends StatelessWidget {
   const InboxPage({Key? key}) : super(key: key);
@@ -78,100 +80,7 @@ class InboxPage extends StatelessWidget {
                 physics: const NeverScrollableScrollPhysics(),
                 itemCount: activities.length,
                 itemBuilder: (context, index) {
-                  return Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 10),
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        CircleAvatar(
-                          radius: 30,
-                          backgroundImage: NetworkImage(activities[index].user.profileImageUrl),
-                        ),
-                        const SizedBox(
-                          width: 10,
-                        ),
-                        Expanded(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Row(
-                                children: [
-                                  Expanded(
-                                    child: Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      children: [
-                                        Text(activities[index].user.username,
-                                            style: Theme.of(context)
-                                                .textTheme
-                                                .bodyText1
-                                                ?.copyWith(fontWeight: FontWeight.bold, fontSize: 14, color: Colors.black)),
-                                        RichText(
-                                          text: TextSpan(
-                                            text: 'acabou de ver o vídeo que você compartilhou  ',
-                                            style: Theme.of(context).textTheme.bodyText1?.copyWith(fontSize: 14, color: Colors.grey[700]),
-                                            children: const <TextSpan>[
-                                              TextSpan(text: '2 sem', style: TextStyle(fontWeight: FontWeight.bold, color: Colors.grey)),
-                                            ],
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                  Image.network(
-                                    activities[index].activityThumb,
-                                    width: 40,
-                                  )
-                                ],
-                              ),
-                              const SizedBox(
-                                height: 10,
-                              ),
-                              Row(
-                                children: [
-                                  Expanded(
-                                    child: InkWell(
-                                      onTap: () {},
-                                      child: Container(
-                                        padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 4),
-                                        decoration: BoxDecoration(border: Border.all(color: Colors.grey, width: 1), borderRadius: BorderRadius.circular(4)),
-                                        child: Center(
-                                            child: Text('Ignorar',
-                                                style: Theme.of(context).textTheme.bodyText1?.copyWith(fontWeight: FontWeight.bold, fontSize: 14))),
-                                      ),
-                                    ),
-                                  ),
-                                  const SizedBox(
-                                    width: 10,
-                                  ),
-                                  Expanded(
-                                    child: InkWell(
-                                      onTap: () {},
-                                      child: Ink(
-                                          padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 4),
-                                          decoration: BoxDecoration(
-                                              borderRadius: BorderRadius.circular(4),
-                                              border: Border.all(
-                                                color: const Color(0xffee2318),
-                                                width: 1,
-                                              ),
-                                              color: const Color(0xffee2318)),
-                                          child: Center(
-                                            child: Text('Seguir',
-                                                style: Theme.of(context)
-                                                    .textTheme
-                                                    .bodyText1
-                                                    ?.copyWith(fontWeight: FontWeight.bold, fontSize: 14, color: Colors.white)),
-                                          )),
-                                    ),
-                                  )
-                                ],
-                              ),
-                            ],
-                          ),
-                        )
-                      ],
-                    ),
-                  );
+                  return NotificationItem(activity: activities[index]);
                 },
                 separatorBuilder: (context, index) {
                   return Container(padding: EdgeInsets.only(left: screenWidth(context, dividedBy: 5.5)), child: Divider(color: Colors.grey[500]));
@@ -190,21 +99,7 @@ class InboxPage extends StatelessWidget {
                 shrinkWrap: true,
                 itemCount: messages.length,
                 itemBuilder: (context, index) {
-                  return ListTile(
-                    contentPadding: EdgeInsets.zero,
-                    leading: CircleAvatar(
-                      radius: 30,
-                      backgroundImage: NetworkImage(messages[index].user.profileImageUrl),
-                    ),
-                    title:
-                        Text(messages[index].user.username, style: Theme.of(context).textTheme.bodyText1?.copyWith(fontWeight: FontWeight.w900, fontSize: 16)),
-                    subtitle: Padding(
-                      padding: const EdgeInsets.only(top: 3),
-                      child: Text(messages[index].message, style: Theme.of(context).textTheme.bodyText1?.copyWith(fontSize: 13, color: Colors.grey[700])),
-                    ),
-                    trailing:
-                        Text(messages[index].messagesCount, style: Theme.of(context).textTheme.bodyText1?.copyWith(fontSize: 13, color: Colors.grey[500])),
-                  );
+                  return MessageItem(message: messages[index]);
                 },
                 separatorBuilder: (context, index) {
                   return Container(padding: EdgeInsets.only(left: screenWidth(context, dividedBy: 5.5)), child: Divider(color: Colors.grey[500]));
@@ -232,35 +127,7 @@ class InboxPage extends StatelessWidget {
                 physics: const NeverScrollableScrollPhysics(),
                 itemCount: friends.length,
                 itemBuilder: (context, index) {
-                  return ListTile(
-                    contentPadding: EdgeInsets.zero,
-                    leading: CircleAvatar(
-                      radius: 25,
-                      backgroundImage: NetworkImage(friends[index].profileImageUrl),
-                    ),
-                    title: Text(friends[index].username,
-                        style: Theme.of(context).textTheme.bodyText1?.copyWith(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 14)),
-                    subtitle: Text('segue você', style: Theme.of(context).textTheme.bodyText1?.copyWith(color: Colors.grey, fontSize: 13)),
-                    trailing: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Container(
-                          width: 90,
-                          height: 30,
-                          child: ElevatedButton(
-                            onPressed: () {},
-                            style: ElevatedButton.styleFrom(primary: const Color(0xffee2318)),
-                            child: Text('Seguir', style: Theme.of(context).textTheme.bodyText1?.copyWith(color: Colors.white, fontSize: 11.5)),
-                          ),
-                        ),
-                        const SizedBox(
-                          width: 5,
-                        ),
-                        Icon(Icons.close, color: Colors.grey[700], size: 20)
-                      ],
-                    ),
-                  );
+                  return FriendItem(friend: friends[index],);
                 },
               )
             ],
