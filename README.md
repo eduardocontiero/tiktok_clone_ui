@@ -1,9 +1,6 @@
 # TikTok Clone Ui
 
-<p>
-    <img src="https://github.com/eduardocontiero/tiktok_clone_ui/blob/master/screenshots/screenshoot.gif?raw=true"/>
-</p>
-
+![](screenshots/screenshot.gif)
 
 ## Installation
 After cloning this repository, migrate to ```tiktok_clone_ui``` folder. Then, follow the following steps:
