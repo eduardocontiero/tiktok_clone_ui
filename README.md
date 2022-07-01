@@ -1,16 +1,16 @@
-# tik_tok_clone_ui
+# TikTok Clone Ui
 
-A new Flutter project.
+<p>
+    <img src="https://github.com/eduardocontiero/tiktok_clone_ui/blob/master/screenshots/screenshoot.gif?raw=true"/>
+</p>
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+## Installation
+After cloning this repository, migrate to ```tiktok_clone_ui``` folder. Then, follow the following steps:
+- Create and Run Android or iOS Emulator/Simulator
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Then run the following commands to run your app:
+```bash
+  flutter pub get
+  flutter run
+```
