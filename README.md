@@ -1,7 +1,7 @@
 # TikTok Clone Ui
 
 <p>
-    <img src="https://github.com/eduardocontiero/tiktok_clone_ui/blob/master/screenshots/screenshoot.gif?raw=true"/>
+    <img src="https://github.com/eduardocontiero/tiktok_clone_ui/blob/master/screenshots/screenshot.gif?raw=true"/>
 </p>
 
 
