@@ -21,9 +21,9 @@ User demoUser3 = User(
 );
 
 final List<Video> videos = [
-  Video(videoUrl: 'assets/videos/video1.mp4', postedBy: demoUser1, caption: 'caption', audioName: 'audioName', likes: '12.5k', comments: '123', shares: '300'),
-  Video(videoUrl: 'assets/videos/video2.mp4', postedBy: demoUser2, caption: 'caption', audioName: 'audioName', likes: '12.5k', comments: '123', shares: '300'),
-  Video(videoUrl: 'assets/videos/video3.mp4', postedBy: demoUser3, caption: 'caption', audioName: 'audioName', likes: '12.5k', comments: '123', shares: '300'),
+  Video(videoUrl: 'assets/videos/video1.mp4', postedBy: demoUser1, caption: 'um texto legal aqui', audioName: 'umaMusica', likes: '12.5k', comments: '123', shares: '300'),
+  Video(videoUrl: 'assets/videos/video2.mp4', postedBy: demoUser2, caption: 'um texto legal aqui', audioName: 'umaMusica', likes: '12.5k', comments: '123', shares: '300'),
+  Video(videoUrl: 'assets/videos/video3.mp4', postedBy: demoUser3, caption: 'um texto legal aqui', audioName: 'umaMusica', likes: '15k', comments: '123', shares: '250'),
 ];
 
 final List<String> videoThumbs = [
